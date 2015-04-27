@@ -4,6 +4,7 @@ public class Cycle {
 	
 	    private int numberOfWheels;
 	    private int weight;
+	    
 	    Cycle(){
 	        this(100,1000);
 	    }
@@ -18,11 +19,14 @@ public class Cycle {
 	            System.out.println(e);
 	       }
 	    }
-	    
-	    public void print(){
-	    	 System.out.println("Number Of wheels :"+numberOfWheels);
-	        System.out.println("Weight "+weight);
+	    public int getNumberOfWheels() {
+        return numberOfWheels; 
+            }
+	    public int getWeight() { 
+	    	return weight;
+	    	}
+	  
 	    }
-	 }
+	 
 	
 

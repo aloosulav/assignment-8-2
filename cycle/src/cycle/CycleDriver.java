@@ -2,12 +2,13 @@ package cycle;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class CycleDriver  {
 	
-		    public static void main(String args[]){
+		    public static void main(String args[]) throws IOException{
 		    	 
 		    		  
 		    	
@@ -18,9 +19,22 @@ public class CycleDriver  {
 		          System.out.println("Enter Weight of Cycle :");
 		          int weight = key.nextInt();
 		         
-		          Cycle C1 = new Cycle(numberOfWheels,weight);
-		        C1.print();
+		          Cycle C = new Cycle(numberOfWheels,weight);
+		          
+		          File F = new File("Cycle.txt");
+		         
+		          if (!F.exists()){
+		        	  F.createNewFile();		         		  
+		        	  }
+		           PrintWriter PW = new PrintWriter(F);
+		         
+		           PW.println("Number Of wheels :"+C.getNumberOfWheels());
+		           PW.println("Weight "+C.getWeight());
+		      
+		           PW.close();
+		           
 		    }
-		 
 		    }
+		    
+		    
 
